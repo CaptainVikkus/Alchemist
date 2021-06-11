@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float sensitivity = 0.1f;
-    public float speed = 5f;
+    public float speed = 50f;
     public float jumpForce = 500f;
 
     private Animator playerAnimator;
@@ -37,8 +37,15 @@ public class PlayerController : MonoBehaviour
         {
             if (IsWalking)
             {
-                transform.position += (IsFlipped ? Vector3.left : Vector3.right)
-                    * speed * Time.deltaTime;
+                playerRb2d.velocity = new Vector2(
+                    (IsFlipped ? -1f: 1f) * speed,
+                    playerRb2d.velocity.y);
+            }
+            else
+            {
+                playerRb2d.velocity = new Vector2(
+                    0f,
+                    playerRb2d.velocity.y); 
             }
         }
     }
@@ -72,6 +79,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool(IsJumpingHash, true);
         IsJumping = true;
 
+        playerRb2d.AddForce(Vector2.up * jumpForce);
         StartCoroutine(Wait());
     }
 
