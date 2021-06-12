@@ -40,7 +40,7 @@ public class @AlchemistActions : IInputActionCollection, IDisposable
                     ""id"": ""5b3d37df-2a20-4508-b523-bae7a7d881db"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press(behavior=2)""
                 },
                 {
                     ""name"": ""Jump"",
