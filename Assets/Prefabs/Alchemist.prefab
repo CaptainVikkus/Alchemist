@@ -294,7 +294,11 @@ GameObject:
   - component: {fileID: 6504563952318461448}
   - component: {fileID: 425011397323368821}
   - component: {fileID: 1741254856}
+<<<<<<< Updated upstream
   - component: {fileID: 1623981074}
+=======
+  - component: {fileID: 8294793982777582623}
+>>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Alchemist
   m_TagString: Untagged
@@ -472,7 +476,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< Updated upstream
 --- !u!114 &1623981074
+=======
+--- !u!114 &8294793982777582623
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -481,7 +489,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6624068486295995622}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: c52f65a282f966c4599ba8de9af09fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   powerupHolder: {fileID: 1328201419}
+=======
+  m_Script: {fileID: 11500000, guid: 507a11708e37321448ed3152894e5cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointSpawn: {fileID: 0}
+>>>>>>> Stashed changes
