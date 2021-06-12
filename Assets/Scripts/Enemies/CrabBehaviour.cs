@@ -7,6 +7,10 @@ public class CrabBehaviour : MonoBehaviour
     public float speed = 1f;
     public float behaviourSpeed = 1f;
     public Vector3 groundCheck;
+    public AudioClip deathSound;
+    public AudioClip movementSound;
+
+    private AudioSource audio;
 
     private float timeElapsed = 0f;
     private bool IsWalking = false;
@@ -16,6 +20,7 @@ public class CrabBehaviour : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +61,11 @@ public class CrabBehaviour : MonoBehaviour
         }
         //Move Forwards
         transform.position += transform.right * speed * Time.deltaTime;
+    }
+
+    public void PlayFootstep()
+    {
+        audio.PlayOneShot(movementSound);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

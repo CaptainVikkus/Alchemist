@@ -8,7 +8,10 @@ public class OctopsBehaviour : MonoBehaviour
     public float pathTolerance = 0.1f;
     public Vector3 patrol1 = Vector3.left;
     public Vector3 patrol2 = Vector3.right;
+    public AudioClip deathSound;
+    public AudioClip movementSound;
 
+    private AudioSource audio;
     private Vector3 worldPatrol1;
     private Vector3 worldPatrol2;
     private Vector3 target;
@@ -21,6 +24,9 @@ public class OctopsBehaviour : MonoBehaviour
         worldPatrol2 = transform.position + patrol2;
         target = worldPatrol1;
         patrolpicker = true;
+
+        audio = GetComponent<AudioSource>();
+        StartCoroutine(PlayWalkDelayed());
     }
 
     // Update is called once per frame
@@ -49,5 +55,14 @@ public class OctopsBehaviour : MonoBehaviour
     {
         Gizmos.DrawSphere(transform.position + patrol1, 0.1f);
         Gizmos.DrawSphere(transform.position + patrol2, 0.1f);
+    }
+
+    IEnumerator PlayWalkDelayed()
+    {
+        while (isActiveAndEnabled)
+        {
+            audio.PlayOneShot(movementSound);
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 }
