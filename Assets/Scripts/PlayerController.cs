@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public readonly int IsJumpingHash = Animator.StringToHash("IsJumping");
     public readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
+    public readonly int IsFiringHash = Animator.StringToHash("IsFiring");
 
     public bool IsJumping { get; private set; }
     public bool IsFlipped { get; private set; }
@@ -80,14 +81,27 @@ public class PlayerController : MonoBehaviour
         IsJumping = true;
 
         playerRb2d.AddForce(Vector2.up * jumpForce);
-        StartCoroutine(Wait());
     }
 
-    private IEnumerator Wait()
+
+    public void OnPower(InputValue input)
     {
-        yield return new WaitForSeconds(1f);
-        playerAnimator.SetBool(IsJumpingHash, false);
-        IsJumping = false;
-        Debug.Log("Land");
+        playerAnimator.SetBool(IsFiringHash, input.isPressed);
+
+        if (input.isPressed)
+        { //Power Use
+        }
+        else 
+        { //Power Stop 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            IsJumping = false;
+            playerAnimator.SetBool(IsJumpingHash, false);
+        }
     }
 }
