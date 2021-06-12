@@ -8,10 +8,13 @@ public class PowerUpHander : MonoBehaviour
     private GameObject powerupHolder;
     private List<PowerUp> powerUps = new List<PowerUp>();
     private PowerUp currentPowerUp;
+    private PlayerController player;
+    public PlayerController Player => player;
 
     public void Start()
     {
         powerUps.AddRange(powerupHolder.GetComponents<PowerUp>());
+        player = GetComponent<PlayerController>();
     }
     public void SwitchPowerUp(PowerUps newPowerUp)
     {

@@ -22,17 +22,17 @@ public class Phaser : PowerUp
 
     public override void OnPowerStop()
     {
-        powerUpHander.gameObject.layer = normalLayer;
+        powerUpHander.gameObject.layer = LayerMask.NameToLayer("Player");
         Color newColor = powerUpHander.GetComponent<SpriteRenderer>().color;
-        newColor.a = normalAlpha;
+        newColor.a = normalAlpha / 255;
         powerUpHander.GetComponent<SpriteRenderer>().color = newColor;
     }
 
     public override void OnPowerUse()
     {
-        powerUpHander.gameObject.layer = phasingLayer;
+        powerUpHander.gameObject.layer = LayerMask.NameToLayer("Phasing"); 
         Color newColor = powerUpHander.GetComponent<SpriteRenderer>().color;
-        newColor.a = phasingLayer;
+        newColor.a = phasingAlpha / 255;
         powerUpHander.GetComponent<SpriteRenderer>().color = newColor;
     }
 }

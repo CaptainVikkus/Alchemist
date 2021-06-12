@@ -14,13 +14,14 @@ public class Blaster : PowerUp
     protected Transform fireSpawnPoint;
     public override void OnPowerStop()
     {
-        
+        powerUpHander.Player.PlayFiringAnim(false);
     }
 
     public override void OnPowerUse()
     {
         if (readyToFire)
         {
+            powerUpHander.Player.PlayFiringAnim(true);
             // Fire off bullet
             readyToFire = false;
             GameObject bullet = Instantiate(bulletPrefab, fireSpawnPoint.position, bulletPrefab.transform.rotation);

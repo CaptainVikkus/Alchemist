@@ -19,11 +19,12 @@ public class JetBlaster : PowerUp
 
     public override void OnPowerStop()
     {
+
     }
 
     public override void OnPowerUse()
     {
-        rigid.AddForce(rigid.transform.up * thrustForce, ForceMode2D.Impulse);
+        rigid.AddForce(rigid.transform.up * thrustForce * Time.deltaTime, ForceMode2D.Impulse);
 
         if (readyToFire)
         {

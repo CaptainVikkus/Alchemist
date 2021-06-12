@@ -15,7 +15,7 @@ public class Jetpack : PowerUp
 
     public override void OnPowerUse()
     {
-        rigid.AddForce(rigid.transform.up * thrustForce, ForceMode2D.Impulse);
+        rigid.AddForce(rigid.transform.up * thrustForce * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     protected virtual void Awake()

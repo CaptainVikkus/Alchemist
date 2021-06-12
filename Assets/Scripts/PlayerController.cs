@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnPower(InputValue input)
     {
-        playerAnimator.SetBool(IsFiringHash, input.isPressed);
 
         if (input.isPressed)
         { //Power Use
@@ -125,6 +124,11 @@ public class PlayerController : MonoBehaviour
         playerAudio.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
         playerAudio.PlayOneShot(walkSound);
         playerAudio.pitch = 1f;
+    }
+
+    public void PlayFiringAnim(bool play)
+    {
+        playerAnimator.SetBool(IsFiringHash, play);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
