@@ -80,14 +80,14 @@ public class PlayerController : MonoBehaviour
         IsJumping = true;
 
         playerRb2d.AddForce(Vector2.up * jumpForce);
-        StartCoroutine(Wait());
     }
 
-    private IEnumerator Wait()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        yield return new WaitForSeconds(1f);
-        playerAnimator.SetBool(IsJumpingHash, false);
-        IsJumping = false;
-        Debug.Log("Land");
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            IsJumping = false;
+            playerAnimator.SetBool(IsJumpingHash, false);
+        }
     }
 }
