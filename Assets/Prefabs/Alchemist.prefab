@@ -407,7 +407,7 @@ MonoBehaviour:
   walkSound: {fileID: 8300000, guid: a53665d2ead2f6d4b8ceb9af1ed26718, type: 3}
   jumpSound: {fileID: 8300000, guid: e6583a8f223eb4b48a429cb81064f284, type: 3}
   landSound: {fileID: 8300000, guid: 0674a4456e8ef024da69c07896766565, type: 3}
-  mainfirePoint: {fileID: 0}
+  mainfirePoint: {fileID: 4958180882212639535}
 --- !u!114 &3239944142398526295
 MonoBehaviour:
   m_ObjectHideFlags: 0
