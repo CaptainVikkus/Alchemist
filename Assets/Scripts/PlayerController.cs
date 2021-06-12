@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     private SpriteRenderer playerSprite;
     private Rigidbody2D playerRb2d;
+    private PowerUpHander powerUpHander;
     private Vector2 movement;
 
     public readonly int IsJumpingHash = Animator.StringToHash("IsJumping");
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerRb2d = GetComponent<Rigidbody2D>();
+        powerUpHander = GetComponent<PowerUpHander>();
     }
 
     private void Update()
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
         if (input.isPressed)
         { //Power Use
+           
         }
         else 
         { //Power Stop 

@@ -18,7 +18,7 @@ public abstract class PowerUp : MonoBehaviour
     protected PowerUps powerUpType;
     public PowerUps PowerUpType => powerUpType;
     protected PowerUpHander powerUpHander;
-    protected Dictionary<PowerUps, PowerUps> possibleCombos;
+    protected Dictionary<PowerUps, PowerUps> possibleCombos = new Dictionary<PowerUps, PowerUps>();
     public Dictionary<PowerUps, PowerUps> PossibleCombos => possibleCombos;
 
     public virtual void LinkPlayerHandler(PowerUpHander powerUpHander)

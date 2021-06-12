@@ -6,7 +6,7 @@ public class PickupBehaviour : MonoBehaviour
 {
     public float oscilationStrength = .5f;
     public float rotationStrength = 5.0f;
-    public int type;
+    public PowerUps type;
     public GameObject background;
     public SpriteRenderer backgroundSprite;
 
@@ -16,13 +16,13 @@ public class PickupBehaviour : MonoBehaviour
     {
         switch (type)
         {
-            case 0:
+            case PowerUps.Phaser:
                 backgroundSprite.color = Color.magenta;
                 break;
-            case 1:
+            case PowerUps.Jetpack:
                 backgroundSprite.color = Color.cyan;
                 break;
-            case 2:
+            case PowerUps.Blaster:
                 backgroundSprite.color = Color.yellow;
                 break;
             default:
@@ -35,5 +35,16 @@ public class PickupBehaviour : MonoBehaviour
     {
         transform.position += Vector3.up * Mathf.Sin(Time.time) * (oscilationStrength/1000f);
         background.transform.Rotate(Vector3.forward * rotationStrength * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PowerUpHander hander = collision.gameObject.GetComponent<PowerUpHander>();
+
+        if (hander != null)
+        {
+            hander.SwitchPowerUp(type);
+            Destroy(gameObject);
+        }
     }
 }
