@@ -31,6 +31,8 @@ public class PowerUpHander : MonoBehaviour
         
         currentPowerUp = powerUps[(int)newPowerUp];
         currentPowerUp.LinkPlayerHandler(this);
+
+        player.hud.OnPowerUpReceive(newPowerUp);
     }
 
     public void UsePowerUp()

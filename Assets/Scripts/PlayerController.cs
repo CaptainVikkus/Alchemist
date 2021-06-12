@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public bool IsJumping { get; private set; }
     public bool IsFlipped { get; private set; }
     public bool IsWalking { get; private set; }
+    public HUDController hud { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         playerRb2d = GetComponent<Rigidbody2D>();
         powerUpHander = GetComponent<PowerUpHander>();
+        hud = GetComponent<HUDController>();
     }
 
     private void Update()

@@ -34,7 +34,7 @@ public class HUDController : MonoBehaviour
                 powerupImage.color = Color.red;
                 break;
             default:
-                powerupImage.color = Color.white;
+                OnPowerUpLost();
                 break;
         }
     }
