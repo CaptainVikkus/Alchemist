@@ -1377,6 +1377,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1546155042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4958180882212639535, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
+  m_PrefabInstance: {fileID: 1741254854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1741254854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1384,6 +1389,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4958180882212639535, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958180882212639535, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958180882212639535, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504563952318461448, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
+      propertyPath: mainfirePoint
+      value: 
+      objectReference: {fileID: 1546155042}
     - target: {fileID: 6624068486295995616, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
       propertyPath: m_RootOrder
       value: 1
