@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour
     public float sensitivity = 0.1f;
     public float speed = 50f;
     public float jumpForce = 500f;
+    public AudioClip walkSound;
+    public AudioClip jumpSound;
+    public AudioClip landSound;
+
 
     private Animator playerAnimator;
+    private AudioSource playerAudio;
     private SpriteRenderer playerSprite;
     private Rigidbody2D playerRb2d;
     private PowerUpHander powerUpHander;
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerRb2d = GetComponent<Rigidbody2D>();
         powerUpHander = GetComponent<PowerUpHander>();
@@ -89,6 +95,8 @@ public class PlayerController : MonoBehaviour
     {
         if (IsJumping) return; //no double jump
 
+        playerAudio.PlayOneShot(jumpSound);
+
         playerAnimator.SetBool(IsJumpingHash, true);
         IsJumping = true;
 
@@ -112,12 +120,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void PlayFootstep()
+    {
+        playerAudio.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        playerAudio.PlayOneShot(walkSound);
+        playerAudio.pitch = 1f;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
+        {        
+            if (IsJumping) { playerAudio.PlayOneShot(landSound); }
+
             IsJumping = false;
             playerAnimator.SetBool(IsJumpingHash, false);
+
         }
     }
 }
