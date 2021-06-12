@@ -11,19 +11,14 @@ public class BlasterBullets : MonoBehaviour
     protected Rigidbody2D rigid;
     [SerializeField]
     protected Animator animator;
+    [SerializeField]
+    protected Collider2D collider;
     protected bool impacted;
-
-
-
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        rigid.AddForce(direction * speed, ForceMode2D.Impulse);
-    }
 
     public void setDirection(Vector2 newDirection)
     {
         direction = newDirection;
+        rigid.velocity = (direction * speed);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +26,8 @@ public class BlasterBullets : MonoBehaviour
         if (!impacted)
         {
             impacted = true;
+            rigid.velocity = new Vector2();
+            collider.isTrigger = true;
             StartCoroutine(PlayImpactAnimation());
         }
     }
@@ -39,7 +36,7 @@ public class BlasterBullets : MonoBehaviour
     {
         animator.enabled = true;
         animator.Play("ImpactAnim");
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(1).length);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }
 }

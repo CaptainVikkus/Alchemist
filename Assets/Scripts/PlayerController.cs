@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb2d;
     private PowerUpHander powerUpHander;
     private Vector2 movement;
+    [SerializeField]
+    Transform mainfirePoint;
+    private bool usingPower;
 
     public readonly int IsJumpingHash = Animator.StringToHash("IsJumping");
     public readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
@@ -51,6 +54,11 @@ public class PlayerController : MonoBehaviour
                     playerRb2d.velocity.y); 
             }
         }
+
+        if (usingPower)
+        {
+            powerUpHander.UsePowerUp();
+        }
     }
 
     public void OnMove(InputValue input)
@@ -60,11 +68,13 @@ public class PlayerController : MonoBehaviour
         {
             IsWalking = true;
             IsFlipped = false;
+            mainfirePoint.localPosition = new Vector3(1.25f, 0f, 0);
         }
         else if (movement.x < -sensitivity)
         {
             IsWalking = true;
             IsFlipped = true;
+            mainfirePoint.localPosition = new Vector3(-1.25f, 0f, 0);
         }
         else
         {
@@ -92,10 +102,13 @@ public class PlayerController : MonoBehaviour
 
         if (input.isPressed)
         { //Power Use
-           
+            powerUpHander.UsePowerUp();
+            usingPower = true;
         }
         else 
         { //Power Stop 
+            powerUpHander.StopPowerUP();
+            usingPower = false;
         }
     }
 

@@ -17,6 +17,7 @@ public class PowerUpHander : MonoBehaviour
     {
         if (currentPowerUp != null)
         {
+            currentPowerUp.OnPowerStop();
             PowerUps powerUpCombo = PowerUps.Num_Of_Powerups;
             currentPowerUp.PossibleCombos.TryGetValue(newPowerUp, out powerUpCombo);
             if (powerUpCombo != PowerUps.Num_Of_Powerups)
@@ -26,16 +27,22 @@ public class PowerUpHander : MonoBehaviour
         }
         
         currentPowerUp = powerUps[(int)newPowerUp];
-        
+        currentPowerUp.LinkPlayerHandler(this);
     }
 
     public void UsePowerUp()
     {
-        currentPowerUp.OnPowerUse();
+        if (currentPowerUp != null)
+        {
+            currentPowerUp.OnPowerUse();
+        }
     }
 
     public void StopPowerUP()
     {
-        currentPowerUp.OnPowerStop();
+        if (currentPowerUp != null)
+        {
+            currentPowerUp.OnPowerStop();
+        }
     }
 }

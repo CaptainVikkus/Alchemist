@@ -342,12 +342,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5356806762721841107}
-  - component: {fileID: 2920482514237641832}
-  - component: {fileID: 7125196874914684886}
   - component: {fileID: 1840714762616861599}
+  - component: {fileID: 2920482514237641832}
+  - component: {fileID: 9063013412164586596}
+  - component: {fileID: 7125196874914684886}
   - component: {fileID: 1896985461691806537}
   - component: {fileID: 5275020855116903862}
-  - component: {fileID: 9063013412164586596}
   m_Layer: 6
   m_Name: PowerHolder
   m_TagString: Untagged
@@ -369,6 +369,19 @@ Transform:
   m_Father: {fileID: 6624068486295995616}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840714762616861599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782720390935098292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e813ecd37d9c144c911f43fb58c5f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrustForce: 5
 --- !u!114 &2920482514237641832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +397,26 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8701955483026960508, guid: b33914f1c58d2c540998a859b6d4ef8a, type: 3}
   fireRate: 1
   fireSpawnPoint: {fileID: 4958180882212639535}
+--- !u!114 &9063013412164586596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782720390935098292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7146c02d0d38ab94ab0d70cda88636e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phasingLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  phasingAlpha: 100
+  normalLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  normalAlpha: 255
 --- !u!114 &7125196874914684886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,19 +432,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8752196526672942204, guid: 56d01906bcca59b47948eccd6ffba9a2, type: 3}
   fireRate: 0.5
   fireSpawnPoint: {fileID: 2817267225035386362}
-  thrustForce: 5
---- !u!114 &1840714762616861599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782720390935098292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e813ecd37d9c144c911f43fb58c5f10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   thrustForce: 5
 --- !u!114 &1896985461691806537
 MonoBehaviour:
@@ -449,26 +469,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6002905386857637668, guid: 22cff201f69a2c54a811cf9428b5b53e, type: 3}
   fireRate: 1
   fireSpawnPoint: {fileID: 4958180882212639535}
---- !u!114 &9063013412164586596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782720390935098292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7146c02d0d38ab94ab0d70cda88636e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  phasingLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  phasingAlpha: 100
-  normalLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  normalAlpha: 255
 --- !u!1 &6840793245896820696
 GameObject:
   m_ObjectHideFlags: 0
