@@ -67,6 +67,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetIsJumping(bool isJumping)
+    {
+        this.IsJumping = isJumping;
+    }
     public void OnMove(InputValue input)
     {
         movement = input.Get<Vector2>();

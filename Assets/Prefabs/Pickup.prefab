@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 2964386240476253914}
   - component: {fileID: 2964386240476253918}
   - component: {fileID: 2964386240476253919}
+  - component: {fileID: 52664226}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -237,6 +238,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oscilationStrength: 0.5
   rotationStrength: 10
-  type: 0
+  type: 4
   background: {fileID: 2964386240416876350}
   backgroundSprite: {fileID: 2964386240416876352}
+--- !u!50 &52664226
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964386240476253915}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
