@@ -23,7 +23,7 @@ public class PowerUpHander : MonoBehaviour
     }
     public void SwitchPowerUp(PowerUps newPowerUp)
     {
-        if (currentPowerUp != null && currentPowerUp.PossibleCombos.Count > 0)
+        if (currentPowerUp != null && currentPowerUp.PossibleCombos.Count > 0 && currentPowerUp.PossibleCombos.ContainsKey(newPowerUp))
         {
             currentPowerUp.OnPowerStop();
             PowerUps powerUpCombo = PowerUps.Num_Of_Powerups;
