@@ -6,7 +6,7 @@ public class CrabBehaviour : MonoBehaviour
 {
     public float speed = 1f;
     public float behaviourSpeed = 1f;
-    public Vector3 groundCheck;
+    public Transform groundCheck;
     public AudioClip deathSound;
     public AudioClip movementSound;
 
@@ -54,8 +54,7 @@ public class CrabBehaviour : MonoBehaviour
     private void Walk()
     {
         //Ground Check
-        Vector2 point = transform.position + groundCheck;
-        if (!Physics2D.OverlapCircle(point, 0.1f, LayerMask.GetMask("Ground")))
+        if (!Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerMask.GetMask("Ground")))
         { //Flip away from edge
             transform.right *= -1;
         }
@@ -75,10 +74,5 @@ public class CrabBehaviour : MonoBehaviour
             Debug.Log("Hit Player");
             collision.gameObject.GetComponent<CheckpointHandler>().TeleportToCheckpoint();
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(transform.position + groundCheck, 0.1f);
     }
 }
