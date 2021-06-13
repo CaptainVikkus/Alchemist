@@ -34,5 +34,13 @@ public class JetPhaser : Jetpack
         Color newColor = powerUpHander.GetComponent<SpriteRenderer>().color;
         newColor.a = phasingAlpha / 255;
         powerUpHander.GetComponent<SpriteRenderer>().color = newColor;
+
+        // Sound effect
+        if (!powerUpHander.Player.playerAudio.isPlaying)
+        {
+            powerUpHander.Player.playerAudio.loop = false;
+            powerUpHander.Player.playerAudio.clip = jetpackSoundEffect;
+            powerUpHander.Player.playerAudio.Play();
+        }
     }
 }

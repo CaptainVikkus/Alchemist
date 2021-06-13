@@ -17,9 +17,12 @@ public class JetBlaster : PowerUp
     protected float thrustForce = 0.5f;
     protected Rigidbody2D rigid;
 
+    [SerializeField]
+    protected AudioClip blasterSound;
+
     public override void OnPowerStop()
     {
-
+        powerUpHander.Player.playerAudio.Stop();
     }
 
     public override void OnPowerUse()
@@ -34,6 +37,11 @@ public class JetBlaster : PowerUp
             // Push in the bullet stats
             bullet.GetComponent<BlasterBullets>().setDirection((fireSpawnPoint.position - powerUpHander.transform.position).normalized);
             // Animation is firing set to true
+
+            // Sound effect
+            powerUpHander.Player.playerAudio.loop = false;
+            powerUpHander.Player.playerAudio.clip = blasterSound;
+            powerUpHander.Player.playerAudio.Play();
         }
     }
 
