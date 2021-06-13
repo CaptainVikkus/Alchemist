@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Level.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: d41d0362e13ef1b4dbc8da2e83e3b79b
+  - enabled: 1
+    path: Assets/Scenes/WarpedCaves.unity
+    guid: 413b196feca49f643afc7831825b8098
   m_configObjects: {}
