@@ -58,6 +58,9 @@ public class OctopsBehaviour : MonoBehaviour
         {
             gameObject.layer = LayerMask.NameToLayer("Phasing");
             collider2.isTrigger = true;
+            Color newColor = spriteRenderer.color;
+            newColor.a = 0.3f;
+            spriteRenderer.color = newColor;
         }
         else if (collision.gameObject.GetComponent<BlasterBullets>() != null)
         {

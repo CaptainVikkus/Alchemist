@@ -84,7 +84,12 @@ public class CrabBehaviour : MonoBehaviour
         else if (collision.gameObject.GetComponent<PhaseBlasterBullet>() != null)
         {
             gameObject.layer = LayerMask.NameToLayer("Phasing");
+            rigidbody2D.gravityScale = 0;
+            rigidbody2D.velocity = new Vector2();
             collider2.isTrigger = true;
+            Color newColor = spriteRenderer.color;
+            newColor.a = 0.3f;
+            spriteRenderer.color = newColor;
         }
         else if (collision.gameObject.GetComponent<BlasterBullets>() != null)
         {

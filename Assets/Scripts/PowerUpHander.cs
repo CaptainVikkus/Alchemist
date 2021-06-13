@@ -23,7 +23,7 @@ public class PowerUpHander : MonoBehaviour
     }
     public void SwitchPowerUp(PowerUps newPowerUp)
     {
-        if (currentPowerUp != null)
+        if (currentPowerUp != null && currentPowerUp.PossibleCombos.Count > 0)
         {
             currentPowerUp.OnPowerStop();
             PowerUps powerUpCombo = PowerUps.Num_Of_Powerups;
@@ -36,6 +36,8 @@ public class PowerUpHander : MonoBehaviour
         
         currentPowerUp = powerUps[(int)newPowerUp];
         currentPowerUp.LinkPlayerHandler(this);
+
+        Debug.Log(newPowerUp.ToString());
 
         player.hud.OnPowerUpReceive(newPowerUp);
         player.playerAudio.PlayOneShot(powerPickupSound);
