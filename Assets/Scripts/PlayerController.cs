@@ -137,6 +137,16 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool(IsFiringHash, play);
     }
 
+    public void Yeet()
+    {
+        playerAudio.PlayOneShot(jumpSound);
+
+        playerAnimator.SetBool(IsJumpingHash, true);
+        IsJumping = true;
+
+        playerRb2d.AddForce(Vector2.up * 400 + Vector2.right * 700);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
