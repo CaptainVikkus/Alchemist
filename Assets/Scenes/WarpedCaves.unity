@@ -17283,18 +17283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1741254856, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: m_GravityScale
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3239944142398526295, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
       propertyPath: checkpointSpawn
       value: 
       objectReference: {fileID: 2057877468}
-    - target: {fileID: 6504563952318461448, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: jumpForce
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 6624068486295995616, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
       propertyPath: m_RootOrder
       value: 0
