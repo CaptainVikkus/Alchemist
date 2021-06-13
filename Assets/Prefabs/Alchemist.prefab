@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493dda464c0359f44b818bb0b3f77cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
   powerupUI: {fileID: 9013035630361245016}
   powerupImage: {fileID: 7461622553148378085}
 --- !u!114 &3239944142398526295
@@ -632,6 +633,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6624068486295995616}
     m_Modifications:
+    - target: {fileID: 1719467247295896273, guid: 64f191ec173aac84688afa51e93c7d7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719467247295896273, guid: 64f191ec173aac84688afa51e93c7d7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4861596766130550894}
+    - target: {fileID: 1719467247295896273, guid: 64f191ec173aac84688afa51e93c7d7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719467247295896273, guid: 64f191ec173aac84688afa51e93c7d7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HUDController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4403801040618728713, guid: 64f191ec173aac84688afa51e93c7d7c, type: 3}
       propertyPath: m_Name
       value: HUD

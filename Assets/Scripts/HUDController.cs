@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class HUDController : MonoBehaviour
 {
+    public GameObject pauseUI;
     public GameObject powerupUI;
     public Image powerupImage;
 
+    private bool IsPaused = false;
 
     public void OnPowerUpReceive(PowerUps type)
     {
@@ -42,5 +45,18 @@ public class HUDController : MonoBehaviour
     public void OnPowerUpLost()
     {
         powerupUI.SetActive(false);
+    }
+
+    public void OnPause(InputValue input)
+    {
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        IsPaused = !IsPaused;
+        GetComponent<PlayerController>().enabled = IsPaused;
+        pauseUI.SetActive(IsPaused);
+        Time.timeScale = IsPaused ? 1f : 0f;
     }
 }
