@@ -30105,6 +30105,10 @@ PrefabInstance:
       value: Octops
       objectReference: {fileID: 0}
     - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
+      propertyPath: patrol1.x
+      value: -1.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
       propertyPath: patrol1.y
       value: -0.73
       objectReference: {fileID: 0}
@@ -71827,7 +71831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
       propertyPath: patrol1.x
-      value: -2.12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
       propertyPath: patrol1.y
@@ -71835,7 +71839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
       propertyPath: patrol2.x
-      value: 2.42
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240931628812025204, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
+      propertyPath: patrol2.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240931628812025205, guid: 296ecfbb69dea834aaa601f925ce266b, type: 3}
       propertyPath: m_RootOrder

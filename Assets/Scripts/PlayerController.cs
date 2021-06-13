@@ -27,10 +27,12 @@ public class PlayerController : MonoBehaviour
     public readonly int IsJumpingHash = Animator.StringToHash("IsJumping");
     public readonly int IsWalkingHash = Animator.StringToHash("IsWalking");
     public readonly int IsFiringHash = Animator.StringToHash("IsFiring");
+    public readonly int IsFlyingHash = Animator.StringToHash("IsFlying");
 
     public bool IsJumping { get; private set; }
     public bool IsFlipped { get; private set; }
     public bool IsWalking { get; private set; }
+    public bool IsFlying { get; private set; }
     public HUDController hud { get; private set; }
     public AudioSource playerAudio { get; private set; }
 
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!IsJumping) //Only move if not jumping
+        if (!IsJumping || IsFlying) //Only move if not jumping
         {
             if (IsWalking)
             {
@@ -69,10 +71,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetIsJumping(bool isJumping)
+    public void SetIsFlying(bool isFlying)
     {
-        this.IsJumping = isJumping;
+        this.IsFlying = isFlying;
+        playerAnimator.SetBool(IsFlyingHash, isFlying);
     }
+
     public void OnMove(InputValue input)
     {
         movement = input.Get<Vector2>();
@@ -155,7 +159,8 @@ public class PlayerController : MonoBehaviour
 
             IsJumping = false;
             playerAnimator.SetBool(IsJumpingHash, false);
-
+            IsFlying = false;
+            playerAnimator.SetBool(IsFlyingHash, false);
         }
     }
 }

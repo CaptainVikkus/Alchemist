@@ -28,7 +28,7 @@ public class JetBlaster : PowerUp
     public override void OnPowerUse()
     {
         rigid.AddForce(rigid.transform.up * thrustForce * Time.deltaTime, ForceMode2D.Impulse);
-        powerUpHander.Player.SetIsJumping(false);
+        powerUpHander.Player.SetIsFlying(false);
         if (readyToFire)
         {
             // Fire off bullet

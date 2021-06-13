@@ -17,7 +17,7 @@ public class Jetpack : PowerUp
 
     public override void OnPowerUse()
     {
-        powerUpHander.Player.SetIsJumping(false);
+        powerUpHander.Player.SetIsFlying(true);
         rigid.AddForce(rigid.transform.up * thrustForce * Time.deltaTime, ForceMode2D.Impulse);
 
         // Sound effect
