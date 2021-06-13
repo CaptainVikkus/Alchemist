@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
 
     private Animator playerAnimator;
-    private AudioSource playerAudio;
     private SpriteRenderer playerSprite;
     private Rigidbody2D playerRb2d;
     private PowerUpHander powerUpHander;
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public bool IsFlipped { get; private set; }
     public bool IsWalking { get; private set; }
     public HUDController hud { get; private set; }
+    public AudioSource playerAudio { get; private set; }
 
     // Start is called before the first frame update
     void Start()

@@ -437,6 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointSpawn: {fileID: 0}
+  respawnSound: {fileID: 8300000, guid: eb57ec7291aab7e4faa22ab25b0870d1, type: 3}
+  checkpointSound: {fileID: 8300000, guid: 5b12dda1adba6f74cbbb6f94c84f1598, type: 3}
 --- !u!114 &6124337726718626987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupHolder: {fileID: 6782720390935098292}
+  powerPickupSound: {fileID: 8300000, guid: 208ade6e3eecfb1478b860b2b82679fc, type: 3}
+  powerLostSound: {fileID: 8300000, guid: b8d942d4518d1934c8eb5dc609ed10e5, type: 3}
 --- !u!1 &6782720390935098292
 GameObject:
   m_ObjectHideFlags: 0

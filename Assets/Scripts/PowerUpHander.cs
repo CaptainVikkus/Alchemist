@@ -6,6 +6,11 @@ public class PowerUpHander : MonoBehaviour
 {
     [SerializeField]
     private GameObject powerupHolder;
+    [SerializeField]
+    private AudioClip powerPickupSound;
+    [SerializeField]
+    private AudioClip powerLostSound;
+
     private List<PowerUp> powerUps = new List<PowerUp>();
     private PowerUp currentPowerUp;
     private PlayerController player;
@@ -33,6 +38,7 @@ public class PowerUpHander : MonoBehaviour
         currentPowerUp.LinkPlayerHandler(this);
 
         player.hud.OnPowerUpReceive(newPowerUp);
+        player.playerAudio.PlayOneShot(powerPickupSound);
     }
 
     public void UsePowerUp()
