@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustForce: 20
+  jetpackSoundEffect: {fileID: 8300000, guid: ff427103d6f8de640be1bc43c65f69cf, type: 3}
 --- !u!114 &2920482514237641832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +519,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8701955483026960508, guid: b33914f1c58d2c540998a859b6d4ef8a, type: 3}
   fireRate: 0.2
   fireSpawnPoint: {fileID: 4958180882212639535}
+  blasterSound: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
 --- !u!114 &9063013412164586596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +556,7 @@ MonoBehaviour:
   fireRate: 0.1
   fireSpawnPoint: {fileID: 2817267225035386362}
   thrustForce: 25
+  blasterSound: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
 --- !u!114 &1896985461691806537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustForce: 20
+  jetpackSoundEffect: {fileID: 8300000, guid: ff427103d6f8de640be1bc43c65f69cf, type: 3}
   phasingLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -590,6 +594,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6002905386857637668, guid: 22cff201f69a2c54a811cf9428b5b53e, type: 3}
   fireRate: 0.2
   fireSpawnPoint: {fileID: 4958180882212639535}
+  blasterSound: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
 --- !u!1 &6840793245896820696
 GameObject:
   m_ObjectHideFlags: 0

@@ -1485,22 +1485,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1840714762616861599, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: jetpackSoundEffect
-      value: 
-      objectReference: {fileID: 8300000, guid: ff427103d6f8de640be1bc43c65f69cf, type: 3}
-    - target: {fileID: 1896985461691806537, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: jetpackSoundEffect
-      value: 
-      objectReference: {fileID: 8300000, guid: ff427103d6f8de640be1bc43c65f69cf, type: 3}
-    - target: {fileID: 2920482514237641832, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: blasterSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
-    - target: {fileID: 5275020855116903862, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: blasterSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
     - target: {fileID: 6624068486295995616, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1549,10 +1533,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alchemist
       objectReference: {fileID: 0}
-    - target: {fileID: 7125196874914684886, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
-      propertyPath: blasterSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8e0e1864034fede4db19fc51f558a013, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624e2f981b25cc443ae8d704af841d3b, type: 3}
 --- !u!1001 &2131974850
