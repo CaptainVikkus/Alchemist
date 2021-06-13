@@ -10,12 +10,15 @@ public class OctopsBehaviour : MonoBehaviour
     public Vector3 patrol2 = Vector3.right;
     public AudioClip deathSound;
     public AudioClip movementSound;
+    public Animator deathAnimatior;
 
     private AudioSource audio;
     private Vector3 worldPatrol1;
     private Vector3 worldPatrol2;
     private Vector3 target;
     private bool patrolpicker;
+    private Collider2D collider2;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,8 @@ public class OctopsBehaviour : MonoBehaviour
         patrolpicker = true;
 
         audio = GetComponent<AudioSource>();
+        collider2 = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(PlayWalkDelayed());
     }
 
@@ -49,6 +54,20 @@ public class OctopsBehaviour : MonoBehaviour
             Debug.Log("Hit Player");
             collision.gameObject.GetComponent<CheckpointHandler>().TeleportToCheckpoint();
         }
+        else if (collision.gameObject.GetComponent<PhaseBlasterBullet>() != null)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Phasing");
+            collider2.isTrigger = true;
+        }
+        else if (collision.gameObject.GetComponent<BlasterBullets>() != null)
+        {
+            collider2.isTrigger = true;
+            spriteRenderer.enabled = false;
+            audio.clip = deathSound;
+            audio.loop = false;
+            audio.Play();
+            StartCoroutine(PlayDeadEffect());
+        }
     }
 
     private void OnDrawGizmos()
@@ -64,5 +83,14 @@ public class OctopsBehaviour : MonoBehaviour
             audio.PlayOneShot(movementSound);
             yield return new WaitForSeconds(1.0f);
         }
+    }
+
+    IEnumerator PlayDeadEffect()
+    {
+        deathAnimatior.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        deathAnimatior.enabled = true;
+        deathAnimatior.Play("EnemyDeathAnim");
+        yield return new WaitForSeconds(deathAnimatior.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
     }
 }
