@@ -9,6 +9,8 @@ public class PickupBehaviour : MonoBehaviour
     public PowerUps type;
     public GameObject background;
     public SpriteRenderer backgroundSprite;
+    public float respawnTime = 5.0f;
+    public bool empty;
 
     private readonly int PowerUpTypeHash = Animator.StringToHash("PowerUpType");
 
@@ -41,10 +43,21 @@ public class PickupBehaviour : MonoBehaviour
     {
         PowerUpHander hander = collision.gameObject.GetComponent<PowerUpHander>();
 
-        if (hander != null)
+        if (hander != null && !empty)
         {
             hander.SwitchPowerUp(type);
-            Destroy(gameObject);
+            StartCoroutine(RespawnPickup());
         }
+    }
+
+    IEnumerator RespawnPickup()
+    {
+        empty = true;
+        GetComponent<SpriteRenderer>().enabled = false;
+        backgroundSprite.enabled = false;
+        yield return new WaitForSeconds(respawnTime);
+        GetComponent<SpriteRenderer>().enabled = true;
+        backgroundSprite.enabled = true;
+        empty = false;
     }
 }
